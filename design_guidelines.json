@@ -1,0 +1,149 @@
+{
+  "theme": "light",
+  "archetype": "Swiss & High-Contrast",
+  "domain": "Developer Tools / Productivity App",
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Chivo, sans-serif",
+        "css_class": "font-chivo"
+      },
+      "body": {
+        "family": "IBM Plex Sans, sans-serif",
+        "css_class": "font-ibm-plex-sans"
+      },
+      "mono": {
+        "family": "IBM Plex Mono, monospace",
+        "css_class": "font-ibm-plex-mono"
+      }
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl font-black tracking-tighter leading-none",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight leading-tight",
+      "h3": "text-xl font-semibold tracking-tight",
+      "h4": "text-lg font-medium",
+      "body": "text-base leading-relaxed text-gray-700",
+      "small": "text-sm text-gray-500",
+      "overline": "text-xs font-ibm-plex-mono uppercase tracking-[0.2em] font-medium"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#F9FAFB",
+      "tertiary": "#F3F4F6",
+      "glass": "bg-white/70 backdrop-blur-xl"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#4B5563",
+      "muted": "#9CA3AF",
+      "inverse": "#FFFFFF"
+    },
+    "border": {
+      "default": "#E5E7EB",
+      "focus": "#0A0A0A",
+      "hover": "#D1D5DB"
+    },
+    "brand": {
+      "primary": "#0A0A0A",
+      "hover": "#262626"
+    },
+    "status": {
+      "not_started": "#94A3B8",
+      "in_progress": "#F59E0B",
+      "revised": "#3B82F6",
+      "strong": "#10B981",
+      "weak_mistakes": "#EF4444"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "section_padding": "py-16 md:py-24",
+      "container_padding": "px-4 sm:px-6 md:px-8",
+      "card_padding": "p-6",
+      "item_gap": "gap-4 md:gap-6"
+    },
+    "grid": {
+      "dashboard_base": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "card_span": {
+        "summary_widget": "col-span-1",
+        "main_content": "col-span-1 md:col-span-2 lg:col-span-3",
+        "sidebar": "col-span-1"
+      }
+    },
+    "surfaces": {
+      "card": "bg-white border border-gray-200 rounded-sm shadow-none transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-gray-300",
+      "header": "sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200 backdrop-saturate-150",
+      "input": "bg-white border border-gray-200 rounded-sm focus:ring-2 focus:ring-black focus:border-black transition-all",
+      "button": {
+        "primary": "bg-black text-white hover:bg-gray-800 rounded-sm font-medium transition-colors",
+        "secondary": "bg-gray-100 text-black hover:bg-gray-200 rounded-sm font-medium transition-colors",
+        "outline": "bg-transparent border border-gray-200 text-black hover:border-black rounded-sm font-medium transition-colors"
+      }
+    }
+  },
+  "motion": {
+    "hover": "transition-transform duration-200 ease-out",
+    "enter": "animate-in fade-in slide-in-from-bottom-4 duration-300 ease-out",
+    "dialog": "animate-in zoom-in-95 duration-200 ease-out"
+  },
+  "components": {
+    "strategy": "Shadcn UI heavy with brutalist/minimalist overrides. Sharp corners (rounded-sm or rounded-none). Flat backgrounds, 1px solid borders. No soft shadows unless hovering.",
+    "customizations": {
+      "tabs": "Override Shadcn fixed height. Use h-auto. Minimalist bottom-border style preferred over pill style.",
+      "dialog": "Minimal padding, sharp corners, backdrop-blur-sm on overlay.",
+      "badge": "Flat colors matching status, uppercase, font-ibm-plex-mono text-xs tracking-widest px-2 py-1 rounded-sm."
+    },
+    "third_party": {
+      "charts": "recharts (for revision streaks and category progress)",
+      "icons": "lucide-react",
+      "state_management": "zustand",
+      "markdown": "react-markdown + remark-gfm (for code snippets in answers)"
+    }
+  },
+  "media": {
+    "images": [
+      {
+        "id": "empty_state",
+        "category": "empty_state",
+        "url": "https://images.unsplash.com/photo-1607430295271-4c6d191d833a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwZ2VvbWV0cmljJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzc1MjgzMzE1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Minimal geometric abstract image for empty states (no questions found, zero mistakes, etc.)"
+      }
+    ],
+    "rules": "Use the empty state image with extreme desaturation (grayscale) and low opacity (20%) as a background watermark for empty sections."
+  },
+  "testing": {
+    "rules": "All interactive elements (buttons, inputs, tabs, dialog triggers) MUST have a role-based data-testid attribute (e.g., data-testid='add-question-btn', data-testid='filter-status-select')."
+  },
+  "architecture_plan": {
+    "features": [
+      "Category-wise Question Management (JS, React, Redux, DSA, Debugging, Prod Issues)",
+      "CRUD operations for Questions (Question + Ideal Answer)",
+      "Status tracking (Not Started, In Progress, Revised, Strong)",
+      "Notes & Mistakes Tracking per question",
+      "Smart Revision System (Scoring = mistakes count + time since last revision + status weight)",
+      "Category Progress Tracking via Recharts",
+      "Export/Import as JSON/CSV",
+      "Daily Revision Streaks"
+    ],
+    "state_management": "Zustand store with persist middleware for LocalStorage (can swap to MongoDB later).",
+    "routing": "React Router (Dashboard Home, Categories View, Smart Revision Mode, Settings)",
+    "folder_structure": {
+      "src/components/ui": "Shadcn components",
+      "src/components/features": "Domain-specific (QuestionCard, SmartRevisionList, ProgressChart)",
+      "src/store": "Zustand slices (useQuestionStore, useUserStore)",
+      "src/utils": "Scoring algorithms, CSV/JSON export parsers",
+      "src/pages": "Dashboard, Category, Revision, Settings"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Implement the Swiss & High-Contrast light theme. Do not use gradients.",
+    "Ensure headings use Chivo and body uses IBM Plex Sans. Import these from Google Fonts.",
+    "Use JetBrains Mono or IBM Plex Mono for all code snippets, tags, and badges.",
+    "Build a 'Smart Revision' view that sorts questions based on the custom scoring algorithm (Mistakes > Time > Status).",
+    "Use Shadcn UI extensively but override rounded corners to 'rounded-sm' (2px or 4px) to fit the technical/brutalist developer vibe.",
+    "For the empty state, use the provided Unsplash image, styled as a desaturated background watermark.",
+    "Implement Markdown support for the 'Final Ideal Answer' so developers can format code blocks."
+  ]
+}
