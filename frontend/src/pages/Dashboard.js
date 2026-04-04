@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Search, Filter, Download, Upload, TrendingUp, Flame } from 'lucide-react';
-import api from '@/utils/api';
-import useAuthStore from '@/store/useAuthStore';
-import useQuestionStore from '@/store/useQuestionStore';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import CategoryCard from '@/components/features/CategoryCard';
-import QuestionCard from '@/components/features/QuestionCard';
-import QuestionDialog from '@/components/features/QuestionDialog';
-import ProgressChart from '@/components/features/ProgressChart';
-import Header from '@/components/features/Header';
-import { exportAsJSON, exportAsCSV, parseJSONFile } from '@/utils/helpers';
+import api from '../utils/api';
+import useAuthStore from '../store/useAuthStore';
+import useQuestionStore from '../store/useQuestionStore';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import CategoryCard from '../components/features/CategoryCard';
+import QuestionCard from '../components/features/QuestionCard';
+import QuestionDialog from '../components/features/QuestionDialog';
+import ProgressChart from '../components/features/ProgressChart';
+import Header from '../components/features/Header';
+import { exportAsJSON, exportAsCSV, parseJSONFile } from '../utils/helpers';
 import { toast } from 'sonner';
 import {
   Select,
@@ -19,13 +19,13 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '../components/ui/select';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '../components/ui/dropdown-menu';
 
 const CATEGORIES = ['JavaScript', 'React', 'Redux', 'DSA', 'Debugging', 'Production Issues'];
 

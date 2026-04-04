@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import { LogOut, User, Zap, LayoutDashboard } from 'lucide-react';
-import useAuthStore from '@/store/useAuthStore';
-import { Button } from '@/components/ui/button';
+import useAuthStore from '../../store/useAuthStore';
+import { Button } from '../ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
+} from '../ui/dropdown-menu';
 
 export default function Header() {
   const navigate = useNavigate();

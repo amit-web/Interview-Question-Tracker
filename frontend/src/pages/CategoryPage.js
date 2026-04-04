@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Plus } from 'lucide-react';
-import api from '@/utils/api';
-import useQuestionStore from '@/store/useQuestionStore';
-import { Button } from '@/components/ui/button';
-import QuestionCard from '@/components/features/QuestionCard';
-import QuestionDialog from '@/components/features/QuestionDialog';
-import Header from '@/components/features/Header';
+import api from '../utils/api';
+import useQuestionStore from '../store/useQuestionStore';
+import { Button } from '../components/ui/button';
+import QuestionCard from '../components/features/QuestionCard';
+import QuestionDialog from '../components/features/QuestionDialog';
+import Header from '../components/features/Header';
 import { toast } from 'sonner';
 
 export default function CategoryPage() {

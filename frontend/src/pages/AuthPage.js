@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Mail, Lock, User } from 'lucide-react';
-import api from '@/utils/api';
-import useAuthStore from '@/store/useAuthStore';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import api from '../utils/api';
+import useAuthStore from '../store/useAuthStore';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
 import { toast } from 'sonner';
 
 export default function AuthPage() {

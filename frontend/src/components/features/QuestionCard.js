@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Edit, Trash2, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
-import api from '@/utils/api';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import api from '../../utils/api';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,20 +12,20 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
+} from '../ui/alert-dialog';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
-import { Input } from '@/components/ui/input';
+} from '../ui/select';
+import { Textarea } from '../ui/textarea';
+import { Input } from '../ui/input';
 import { toast } from 'sonner';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { getStatusColor } from '@/utils/helpers';
+import { getStatusColor } from '../../utils/helpers';
 
 export default function QuestionCard({ question, onEdit, onRefresh, showPriority = false }) {
   const [expanded, setExpanded] = useState(false);

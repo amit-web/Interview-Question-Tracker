@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
-import useAuthStore from '@/store/useAuthStore';
-import AuthPage from '@/pages/AuthPage';
-import Dashboard from '@/pages/Dashboard';
-import CategoryPage from '@/pages/CategoryPage';
-import SmartRevisionPage from '@/pages/SmartRevisionPage';
-import '@/App.css';
+import useAuthStore from './store/useAuthStore';
+import AuthPage from './pages/AuthPage';
+import Dashboard from './pages/Dashboard';
+import CategoryPage from './pages/CategoryPage';
+import SmartRevisionPage from './pages/SmartRevisionPage';
+import './App.css';
 
 function ProtectedRoute({ children }) {
   const token = useAuthStore(state => state.token);

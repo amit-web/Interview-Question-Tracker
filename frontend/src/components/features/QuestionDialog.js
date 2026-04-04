@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import api from '@/utils/api';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import api from '../../utils/api';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea';
 import {
   Dialog,
   DialogContent,
@@ -10,14 +10,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog';
+} from '../ui/dialog';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '../ui/select';
 import { toast } from 'sonner';
 
 const CATEGORIES = ['JavaScript', 'React', 'Redux', 'DSA', 'Debugging', 'Production Issues'];

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, RefreshCw, Zap } from 'lucide-react';
-import api from '@/utils/api';
-import useAuthStore from '@/store/useAuthStore';
-import { Button } from '@/components/ui/button';
-import QuestionCard from '@/components/features/QuestionCard';
-import Header from '@/components/features/Header';
+import api from '../utils/api';
+import useAuthStore from '../store/useAuthStore';
+import { Button } from '../components/ui/button';
+import QuestionCard from '../components/features/QuestionCard';
+import Header from '../components/features/Header';
 import { toast } from 'sonner';
 
 export default function SmartRevisionPage() {
